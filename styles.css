@@ -1,0 +1,146 @@
+@font-face {
+    font-family: "fifteentwenty";
+    src: url("./fonts/FifteenTwenty-Bold.otf")
+}
+
+#viewport {
+    height: 1920px;
+    width: 1080px;
+    background-color: black;
+    padding: 2%;
+}
+
+h1 {
+    font-family: "fifteentwenty";
+    color: magenta;
+    font-size: 88px;
+    text-align: center;
+}
+
+h2 {
+    font-family: "fifteentwenty";
+    color: lime;
+    font-size: 52px;
+    text-align: center;
+}
+
+h3 {
+    font-family: "fifteentwenty";
+    color: yellow;
+    font-size: 42px;
+    text-align: center;
+}
+
+p {
+    font-family: "fifteentwenty";
+    color: whitesmoke;
+    font-size: 32px;
+}
+
+ul {
+    font-family: "fifteentwenty";
+    color: whitesmoke;
+    font-size: 28px;
+}
+
+.typewriter {
+    --caret: currentcolor;
+}
+
+.typewriter::before {
+    content: "";
+    animation: typing 4s infinite;
+}
+
+.typewriter::after {
+    content: "";
+    border-right: 1px solid var(--caret);
+    animation: blink 0.5s linear infinite;
+    vertical-align: 20px;
+}
+
+@keyframes typing {
+    0% {content: "";}
+    3% {content: "H";}
+    6% {content: "HT";}
+    9% {content: "HTM";}
+    12% {content: "HTML";}
+    15% {content: "HTML ";}
+    18% {content: "HTML &";}
+    21% {content: "HTML & C";}
+    24% {content: "HTML & CS";}
+    27% {content: "HTML & CSS";}
+    30% {content: "HTML & CSS ";}
+    33% {content: "HTML & CSS H";}
+    36% {content: "HTML & CSS HA";}
+    39% {content: "HTML & CSS HAC";}
+    42% {content: "HTML & CSS HACK";}
+    45% {content: "HTML & CSS HACKA";}
+    48% {content: "HTML & CSS HACKAT";}
+    51% {content: "HTML & CSS HACKATH";}
+    54% {content: "HTML & CSS HACKATHO";}
+    57% {content: "HTML & CSS HACKATHON";}
+    100% {content: "HTML & CSS HACKATHON";}
+}
+
+@keyframes blink {
+    0%, 100% {opacity: 1;}
+    50% {opacity: 0;}
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .typewriter::after {
+        animation: none;
+    }
+}
+
+@keyframes sequence-popup {
+    0%, 100% { content: "James O'Brien"}
+}
+
+.typewriter::after {
+    border-right: 1ch solid var(--caret);
+}
+
+.left, .right {
+    width: 40%;
+    margin: 3%;
+    padding:3%;
+    margin-top: 100px;
+    border-color: whitesmoke;
+    border-width: 2px;
+    border-radius: 45px;
+    border-style: solid;
+    background-color: black;
+    z-index: 3;
+}
+
+.twocol {
+    display: flex;
+}
+
+.stack {
+    position: relative;
+    width: 700px;
+    margin: auto;
+}
+
+.fire {
+    position: absolute;
+    top: -200px;
+    left: 0;
+    width: 700px;
+    z-index: 1;
+}
+
+.dancer {
+    position: absolute;
+    top: 70px;
+    left: 150px;
+    width: 400px;
+    z-index: 2;
+}
+
+a {
+    color: whitesmoke;
+}
