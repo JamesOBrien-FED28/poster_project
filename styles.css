@@ -1,8 +1,10 @@
+/*Declaring the downloaded font*/
 @font-face {
     font-family: "fifteentwenty";
     src: url("./fonts/FifteenTwenty-Bold.otf")
 }
 
+/*Setting the size of the poster*/
 #viewport {
     height: 1920px;
     width: 1080px;
@@ -43,22 +45,82 @@ ul {
     font-size: 28px;
 }
 
-.typewriter {
-    --caret: currentcolor;
+a {
+    color: whitesmoke;
 }
 
+/*Settings for the 2 column section*/
+.left, .right {
+    width: 40%;
+    margin: 3%;
+    padding:3%;
+    margin-top: 100px;
+    border-color: whitesmoke;
+    border-width: 2px;
+    border-radius: 45px;
+    border-style: solid;
+    background-color: black;
+    z-index: 3;
+}
+
+/*Flex to display 2x <div> elements side by side*/
+.twocol {
+    display: flex;
+}
+
+/**************/
+/*Stacked GIFs*/
+/**************/
+
+.stack {
+    position: relative;
+    width: 700px;
+    margin: auto;
+}
+
+.fire {
+    position: absolute;
+    top: -200px;
+    left: 0;
+    width: 700px;
+    z-index: 1;
+}
+
+.computer {
+    position: absolute;
+    top: 250px;
+    left: 130px;
+    width: 400px;
+    z-index: 2;
+}
+
+
+/****************************/
+/*Animated text - typewriter*/
+/****************************/
+
+/*Defines initial empty 'content' string, animation length and loop*/
 .typewriter::before {
-    content: "";
-    animation: typing 4s infinite;
+    content: ""; /*Creates invisible element for the text string*/
+    animation-name: typing;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
 }
 
+/*Creates the cursor effect*/
 .typewriter::after {
-    content: "";
-    border-right: 1px solid var(--caret);
-    animation: blink 0.5s linear infinite;
-    vertical-align: 20px;
+    content: ""; /*Creates invisible element to hold the cursor*/
+    border-right-width: 1ch;
+    border-right-style: solid;
+    border-right-color: currentColor;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    vertical-align: 20px; /*Offsets cursor height to align with text*/
 }
 
+/*Keyframe animation simulating typing by swapping out the content string*/
 @keyframes typing {
     0% {content: "";}
     3% {content: "H";}
@@ -79,68 +141,11 @@ ul {
     48% {content: "HTML & CSS HACKAT";}
     51% {content: "HTML & CSS HACKATH";}
     54% {content: "HTML & CSS HACKATHO";}
-    57% {content: "HTML & CSS HACKATHON";}
-    100% {content: "HTML & CSS HACKATHON";}
+    57%, 100% {content: "HTML & CSS HACKATHON";}
 }
 
+/*Keyframe animation for the blinking cursor, toggles opacity*/
 @keyframes blink {
     0%, 100% {opacity: 1;}
     50% {opacity: 0;}
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .typewriter::after {
-        animation: none;
-    }
-}
-
-@keyframes sequence-popup {
-    0%, 100% { content: "James O'Brien"}
-}
-
-.typewriter::after {
-    border-right: 1ch solid var(--caret);
-}
-
-.left, .right {
-    width: 40%;
-    margin: 3%;
-    padding:3%;
-    margin-top: 100px;
-    border-color: whitesmoke;
-    border-width: 2px;
-    border-radius: 45px;
-    border-style: solid;
-    background-color: black;
-    z-index: 3;
-}
-
-.twocol {
-    display: flex;
-}
-
-.stack {
-    position: relative;
-    width: 700px;
-    margin: auto;
-}
-
-.fire {
-    position: absolute;
-    top: -200px;
-    left: 0;
-    width: 700px;
-    z-index: 1;
-}
-
-.dancer {
-    position: absolute;
-    top: 70px;
-    left: 150px;
-    width: 400px;
-    z-index: 2;
-}
-
-a {
-    color: whitesmoke;
 }
